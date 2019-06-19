@@ -1,5 +1,5 @@
 @mixin Text($fontFamily, $fontSize, $fontWeight, $fontStyle, $lineHeight, $letterSpacing, $color: $grey, $textAlign: false) {
-    font-family: $fontFamily, sans-serif;
+    font-family: $fontFamily;
     font-size: $fontSize;
     font-weight: $fontWeight;
     font-style: $fontStyle;
@@ -9,5 +9,16 @@
     color: $color;
     @if $textAlign != false {
         text-align: $textAlign;
+    }
+}
+
+@mixin Size($height: false, $width: false) {
+
+    @if $height != false {
+        height: $height;
+    }
+
+    @if $width != false {
+        width: $width;
     }
 }

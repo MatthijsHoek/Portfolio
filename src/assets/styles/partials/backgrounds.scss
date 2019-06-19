@@ -1,0 +1,13 @@
+.container {
+    height: 100%;
+    width: 100%;
+
+    &--home {
+        background: url('../../images/backgrounds/bc-home.svg'), url('images/backgrounds/lines-home.svg');
+    }
+
+    &--home, &--image {
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="522" viewBox="0 0 1440 522">
+    <defs>
+        <radialGradient id="a" cx="74.594%" cy="25.205%" r="107414.721%" fx="74.594%" fy="25.205%" gradientTransform="matrix(-.0007 .00069 0 -1 .746 .504)">
+            <stop offset="0%" stop-color="#8424FF"/>
+            <stop offset="100%" stop-color="#3201FF"/>
+        </radialGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke="url(#a)" stroke-linecap="square" stroke-width="4" opacity=".5" transform="translate(0 -373)">
+        <path d="M0 375.5h1440M0 386.5h1440M0 397.5h1440M0 408.5h1440M0 419.5h1440M0 430.5h1440M0 441.5h1440M0 452.5h1440M0 463.5h1440M0 474.5h1440M0 485.5h1440M0 496.5h1440M0 507.5h1440M0 518.5h1440M0 529.5h1440M0 540.5h1440M0 551.5h1440M0 562.5h1440M0 573.5h1440M0 584.5h1440M0 595.5h1440M0 606.5h1440M0 617.5h1440M0 628.5h1440M0 639.5h1440M0 650.5h1440M0 661.5h1440M0 672.5h1440M0 683.5h1440M0 694.5h1440M0 705.5h1440M0 716.5h1440M0 727.5h1440M0 738.5h1440M0 749.5h1440M0 760.5h1440M0 771.5h1440M0 782.5h1440M0 793.5h1440M0 804.5h1440M0 815.5h1440M0 826.5h1440M0 837.5h1440M0 848.5h1440M0 859.5h1440M0 870.5h1440M0 881.5h1440M0 892.5h1440"/>
+    </g>
+</svg>

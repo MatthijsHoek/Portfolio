@@ -1,11 +1,9 @@
-// Normalize
-@import './vendor/normalize.css';
-
-.container {
-    height: 100%;
-    width: 100%;
-    background-color: purple;
-}
-
+// Variables
 @import './variables/colors.scss';
 @import './variables/typography.scss';
+
+// mixins
+@import './mixins/mixins.scss';
+
+// Partials
+@import './partials//backgrounds.scss';

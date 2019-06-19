@@ -1,0 +1,105 @@
+@import '../../assets/styles/app.scss';
+
+.sidebar {
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 80px;
+    transition: 1s;
+    position: fixed;
+    left: 0;
+
+    &--expand {
+        width: 100px;
+    }
+
+    &--full {
+        width: 400px;
+    }
+
+    ////////////////////////////// Containers
+
+    &-top, &-mid, &-bot, {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: calc(100% / 3);
+    }
+
+    &-wrapper {
+        flex-direction: column;
+        margin-left: 25px;
+    }
+
+    ////////////////////////////// Elements
+
+    &__text {
+        @include Text ($raleway, 12px, bold, normal, normal, normal, $dark);
+        transform: rotate(-90deg);
+        transition: opacity 1s;
+        margin: 0;
+        display: none;
+
+        &--display {
+            display: block;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    ////////////////////////////// Icons
+
+    &__logo {
+        @include Size(30px, 40px);
+        margin-bottom: 30px;
+    }
+
+    &__menu {
+        @include Size(24px, 38px);
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__linkedin {
+        margin-bottom: 30px;
+    }
+
+    &__github, &__linkedin, &-wrapper {
+        @include Size(28px, 28px);
+    }
+
+    &__logo, &__menu, &__linkedin, &__github, &__button {
+        background-color: greenyellow;
+    }
+
+    &__logo, &__menu {
+        margin-left: 20px;
+    }
+
+    &__linkedin, &__github {
+        margin-left: 0;
+    }
+
+    &__button {
+        @include Size(30px, 30px);
+        display: none;
+        margin: 0 20px 0 auto;
+
+        &--display {
+            display: block;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.menu {
+    display: flex;
+}
