@@ -57,25 +57,22 @@ export default class index extends Component {
     }
 
     render() {
-
         return (
-            <div className="container container--home">
-                <div className={this.state.sidebarStatus}>
-                    <div className="sidebar-top">
-                        <div className="sidebar__logo" />
+            <div className={this.state.sidebarStatus}>
+                <div className="sidebar-top">
+                    <div className="sidebar__logo" />
+                </div>
+                <div className="sidebar-mid">
+                    <div className="menu" onMouseEnter={this.HoverOpen} onMouseLeave={this.HoverClose} onClick={this.Open}>
+                        <div className="sidebar__menu" />
+                        <p className={this.state.sidebarTextDisplay}>Menu</p>
                     </div>
-                    <div className="sidebar-mid">
-                        <div className="menu" onMouseEnter={this.HoverOpen} onMouseLeave={this.HoverClose} onClick={this.Open}>
-                            <div className="sidebar__menu" />
-                            <p className={this.state.sidebarTextDisplay}>Menu</p>
-                        </div>
-                        <div className={this.state.sidebarButtonDisplay} onClick={this.Close} />
-                    </div>
-                    <div className="sidebar-bot">
-                        <div className="sidebar-wrapper">
-                            <div className="sidebar__linkedin" />
-                            <div className="sidebar__github" />
-                        </div>
+                    <div className={this.state.sidebarButtonDisplay} onClick={this.Close} />
+                </div>
+                <div className="sidebar-bot">
+                    <div className="sidebar-wrapper">
+                        <div className="sidebar__linkedin" />
+                        <div className="sidebar__github" />
                     </div>
                 </div>
             </div>

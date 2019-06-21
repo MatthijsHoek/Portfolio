@@ -20,7 +20,7 @@
 
     ////////////////////////////// Containers
 
-    &-top, &-mid, &-bot, {
+    &-top, &-mid, &-bot {
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -55,10 +55,13 @@
     &__logo {
         @include Size(30px, 40px);
         margin-bottom: 30px;
+        background: url('../../assets/icons/logo.svg');
+        background-repeat: no-repeat;
     }
 
     &__menu {
         @include Size(24px, 38px);
+        background: url('../../assets/icons/menu.svg');
 
         &:hover {
             cursor: pointer;
@@ -73,7 +76,7 @@
         @include Size(28px, 28px);
     }
 
-    &__logo, &__menu, &__linkedin, &__github, &__button {
+    &__linkedin, &__github, &__button {
         background-color: greenyellow;
     }
 
@@ -89,6 +92,9 @@
         @include Size(30px, 30px);
         display: none;
         margin: 0 20px 0 auto;
+        background: url('../../assets/icons/close.svg');
+        background-repeat: no-repeat;
+        background-size: 30px;
 
         &--display {
             display: block;
