@@ -3,19 +3,24 @@
 .sidebar {
     background-color: $white;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     height: 100vh;
     width: 80px;
     transition: 1s;
     position: fixed;
     left: 0;
 
+    &-icons {
+        display: flex;
+        flex-direction: column;
+    }
+
     &--expand {
         width: 100px;
     }
 
     &--full {
-        width: 400px;
+        width: 500px;
     }
 
     ////////////////////////////// Containers
@@ -25,11 +30,94 @@
         justify-content: flex-start;
         align-items: center;
         height: calc(100% / 3);
+        width: 500px;
+    }
+
+    &-mid {
+        position: relative;
     }
 
     &-wrapper {
         flex-direction: column;
         margin-left: 25px;
+
+        &--left {
+            margin-left: 90px;
+        }
+    }
+
+    &-items{ 
+        display: none;
+        padding-left: 70px;
+        position: absolute;
+        top: -120px;
+        text-decoration: none;
+        
+        &-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__text {
+            @include Text ($raleway, 48px, 800, normal, normal, normal, $dark);
+            margin: 15px 0 15px 20px;
+            text-transform: uppercase;
+            transition: color .5s;
+
+            &--white {
+                color: $white;
+            }
+        }
+
+        &--display {
+            display: block;
+        }
+
+        &-home, &-project, &-about {
+            display: flex;
+            position: relative;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        &-home {
+            width: 190px;
+        }
+
+        &-project {
+            width: 285px;
+        }
+
+        &-about {
+            width: 205px;
+        }
+
+        &__stripe {
+            width: 15px;
+            height: 36px;
+            transform: skew(-10deg);
+            transition: 1s;
+            background: black;
+            margin: 25px 0 auto 0;
+            position: absolute;
+            z-index: -10;
+
+            &--blue {
+                background-color: $strong-blue;
+            }
+
+            &--purple {
+                background-color: $electric-purple;
+            }
+
+            &--dark {
+                background-color: $dark;
+            }
+        }
+
+        
     }
 
     ////////////////////////////// Elements
@@ -52,49 +140,68 @@
 
     ////////////////////////////// Icons
 
-    &__logo {
-        @include Size(30px, 40px);
-        margin-bottom: 30px;
-        background: url('../../assets/icons/logo.svg');
-        background-repeat: no-repeat;
+    &-icons {
+        &__github {
+            background: url('../../assets/icons/github-alt.svg');
+            margin-bottom: 30px;
+        }
+
+        &__linkedin {
+            background: url('../../assets/icons/linkedin.svg');
+        }
+    
+        &__github, &__linkedin {
+            @include Size(28px, 28px);
+            background-repeat: no-repeat;
+            block-size: 28px;
+            margin-left: 27px;
+            color: $dark;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        &__logo {
+            @include Size(30px, 40px);
+            margin-bottom: 30px;
+            background: url('../../assets/icons/logo.svg');
+            background-repeat: no-repeat;
+            margin-left: 20px;
+        }
+
+        &--left {
+            margin-left: 72px;
+        }
+
+        &--more {
+            margin-left: 79px;
+        }
     }
 
     &__menu {
         @include Size(24px, 38px);
         background: url('../../assets/icons/menu.svg');
+        margin-left: 20px;
 
         &:hover {
             cursor: pointer;
         }
-    }
 
-    &__linkedin {
-        margin-bottom: 30px;
-    }
-
-    &__github, &__linkedin, &-wrapper {
-        @include Size(28px, 28px);
-    }
-
-    &__linkedin, &__github, &__button {
-        background-color: greenyellow;
-    }
-
-    &__logo, &__menu {
-        margin-left: 20px;
-    }
-
-    &__linkedin, &__github {
-        margin-left: 0;
+        &--hide {
+            display: none;
+        }
     }
 
     &__button {
         @include Size(30px, 30px);
         display: none;
-        margin: 0 20px 0 auto;
         background: url('../../assets/icons/close.svg');
         background-repeat: no-repeat;
         background-size: 30px;
+        position: absolute;
+        right: 15px;
+        
 
         &--display {
             display: block;
@@ -108,4 +215,9 @@
 
 .menu {
     display: flex;
+}
+
+.item-hovered {
+    width: 100%;
+    transition: 1s;
 }

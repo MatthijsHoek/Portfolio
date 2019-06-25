@@ -1,0 +1,23 @@
+@import '../../assets/styles/app.scss';
+
+.home {
+    height: 100vh;
+    width: 100%;
+    background: url('../../assets/images/backgrounds/bc-home.svg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+
+    &__lines {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: url('../../assets/images/backgrounds/lines-home.svg');
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        background-size: 1840px;
+        background-position-y: 439px;
+    }
+}
