@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './sidebar.scss';
 import { Link } from 'react-router-dom';
+import git from '../../assets/icons/github-alt.svg';
+import linked from '../../assets/icons/linkedin.svg';
 
 export default class index extends Component {
     constructor (props) {
@@ -13,7 +15,8 @@ export default class index extends Component {
             sidebarMenuDisplay: true,
             sidebarLogoDisplay: false,
             sidebarItemsDisplay: false,
-            sidebarIconsDisplay: false
+            sidebarIconsDisplay: false,
+            timeout: 1000
         };
     }
 
@@ -38,7 +41,7 @@ export default class index extends Component {
                     })
                 }
             });
-        }, 1000);
+        }, this.state.timeout);
     }
 
     HoverOpen = () => {
@@ -53,7 +56,7 @@ export default class index extends Component {
                 }, () => {
                     clearTimeout(b);
                 });
-            }, 1000);
+            }, this.state.timeout);
         }
     }
 
@@ -64,9 +67,13 @@ export default class index extends Component {
                 sidebarTextDisplay: false,
             });
         }
+
+        // clearTimeout(b);
     }
 
     Close = () => {
+        // clearTimeout(a);
+
         this.setState({
             sidebarStatus: "sidebar",
             sidebarTextDisplay: false,
@@ -85,7 +92,7 @@ export default class index extends Component {
         
         setTimeout(() => {
             item.children[1].classList.add('sidebar-items__text--white');
-        }, 1000);
+        }, this.state.timeout);
     }
 
     ItemHoverOff = (e) => {
@@ -93,9 +100,11 @@ export default class index extends Component {
 
         item.children[0].classList.remove('item-hovered');
         item.children[1].classList.remove('sidebar-items__text--white');
+        // clearTimeout(c);
     }
 
     render() {
+        console.log(this.state.sidebarTextDisplay)
         return (
             <div className={this.state.sidebarStatus}>
                 <div className="sidebar-icons">
@@ -111,7 +120,7 @@ export default class index extends Component {
                         </div>
 
                         <div className={this.state.sidebarItemsDisplay === false ? "sidebar-items" : "sidebar-items sidebar-items--display"}>
-                            <div className="sidebar-items-container">
+                            <div className={"sidebar-items-container"}>
                                 <Link to="/home">
                                     <div className="sidebar-items-home item" onMouseEnter={this.ItemHoverOn} onMouseLeave={this.ItemHoverOff}> 
                                         <span className="sidebar-items__stripe sidebar-items__stripe--blue" />
@@ -137,8 +146,9 @@ export default class index extends Component {
                     </div>
                     <div className="sidebar-bot">
                         <div className={this.state.sidebarIconsDisplay === false ? "sidebar-icons" : "sidebar-icons sidebar-icons--left"}>
-                            <span className="sidebar-icons__github" href="https://github.com/MatthijsHoek"></span>
-                            <span className="sidebar-icons__linkedin" href="https://www.linkedin.com/in/matthijs-hoek-38981417b/"></span>
+                            
+                            <img className="sidebar-icons__github" src={git} alt="" />
+                            <img className="sidebar-icons__linkedin" src={linked} alt="" />
                         </div>
                     </div>
                 </div>

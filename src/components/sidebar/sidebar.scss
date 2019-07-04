@@ -56,6 +56,10 @@
         &-container {
             display: flex;
             flex-direction: column;
+
+            & > a {
+                text-decoration: none;
+            }
         }
 
         &__text {
@@ -125,7 +129,6 @@
     &__text {
         @include Text ($raleway, 12px, bold, normal, normal, normal, $dark);
         transform: rotate(-90deg);
-        transition: opacity 1s;
         margin: 0;
         display: none;
 
@@ -142,12 +145,7 @@
 
     &-icons {
         &__github {
-            background: url('../../assets/icons/github-alt.svg');
             margin-bottom: 30px;
-        }
-
-        &__linkedin {
-            background: url('../../assets/icons/linkedin.svg');
         }
     
         &__github, &__linkedin {
@@ -155,7 +153,6 @@
             background-repeat: no-repeat;
             block-size: 28px;
             margin-left: 27px;
-            color: $dark;
 
             &:hover {
                 cursor: pointer;
