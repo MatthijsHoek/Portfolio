@@ -11,7 +11,7 @@ import Test from './pages/test';
 
 function App() {
   return (
-    <>
+    <section className="page-contianer">
       <Router>
       <Sidebar />
           <Route exact path="/" component={Home} />
@@ -19,7 +19,7 @@ function App() {
           <Route path="/about" component={About} />
           <Route path="/test" component={Test} />
       </Router>
-    </>
+    </section>
   );
 }
 

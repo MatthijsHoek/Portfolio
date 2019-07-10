@@ -7,7 +7,8 @@
     height: 100vh;
     width: 80px;
     transition: 1s;
-    position: fixed;
+    position: sticky;
+    top: 0;
     left: 0;
 
     &-icons {
@@ -20,7 +21,7 @@
     }
 
     &--full {
-        width: 500px;
+        width: 400px;
     }
 
     ////////////////////////////// Containers
@@ -63,7 +64,7 @@
         }
 
         &__text {
-            @include Text ($raleway, 48px, 800, normal, normal, normal, $dark);
+            @include Text ($raleway, 48px, 800, normal, $dark);
             margin: 15px 0 15px 20px;
             text-transform: uppercase;
             transition: color .5s;
@@ -127,7 +128,7 @@
     ////////////////////////////// Elements
 
     &__text {
-        @include Text ($raleway, 12px, bold, normal, normal, normal, $dark);
+        @include Text ($raleway, 12px, bold, normal, $dark);
         transform: rotate(-90deg);
         margin: 0;
         display: none;
@@ -191,15 +192,14 @@
     }
 
     &__button {
-        @include Size(30px, 30px);
+        @include Size(27px, 27px);
         display: none;
         background: url('../../assets/icons/close.svg');
         background-repeat: no-repeat;
-        background-size: 30px;
+        background-size: 23px;
         position: absolute;
-        right: 15px;
+        right: 115px;
         
-
         &--display {
             display: block;
         }

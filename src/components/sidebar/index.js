@@ -104,7 +104,6 @@ export default class index extends Component {
     }
 
     render() {
-        console.log(this.state.sidebarTextDisplay)
         return (
             <div className={this.state.sidebarStatus}>
                 <div className="sidebar-icons">

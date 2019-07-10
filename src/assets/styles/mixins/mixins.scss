@@ -1,11 +1,11 @@
-@mixin Text($fontFamily, $fontSize, $fontWeight, $fontStyle, $lineHeight, $letterSpacing, $color: $grey, $textAlign: false) {
+@mixin Text($fontFamily, $fontSize, $fontWeight, $lineHeight, $color, $textAlign: false) {
     font-family: $fontFamily;
     font-size: $fontSize;
     font-weight: $fontWeight;
-    font-style: $fontStyle;
+    font-style: normal;
     font-stretch: normal;
+    letter-spacing: normal;
     line-height: $lineHeight;
-    letter-spacing: $letterSpacing;
     color: $color;
     @if $textAlign != false {
         text-align: $textAlign;
