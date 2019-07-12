@@ -120,7 +120,7 @@ export default class index extends Component {
 
                         <div className={this.state.sidebarItemsDisplay === false ? "sidebar-items" : "sidebar-items sidebar-items--display"}>
                             <div className={"sidebar-items-container"}>
-                                <Link to="/home">
+                                <Link to="/">
                                     <div className="sidebar-items-home item" onMouseEnter={this.ItemHoverOn} onMouseLeave={this.ItemHoverOff}> 
                                         <span className="sidebar-items__stripe sidebar-items__stripe--blue" />
                                         <p className="sidebar-items__text">Home</p>
@@ -146,8 +146,8 @@ export default class index extends Component {
                     <div className="sidebar-bot">
                         <div className={this.state.sidebarIconsDisplay === false ? "sidebar-icons" : "sidebar-icons sidebar-icons--left"}>
                             
-                            <img className="sidebar-icons__github" src={git} alt="" />
-                            <img className="sidebar-icons__linkedin" src={linked} alt="" />
+                            <a href="https://github.com/MatthijsHoek"><img className="sidebar-icons__github" src={git} alt="" /></a>
+                            <a href="https://www.linkedin.com/in/matthijs-hoek-38981417b/"><img className="sidebar-icons__linkedin" src={linked} alt="" /></a>
                         </div>
                     </div>
                 </div>

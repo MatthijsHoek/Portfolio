@@ -13,7 +13,7 @@ export default class Projects extends Component {
                     <p className="project__title">Old Dance School Admin</p>
                     <p className="project__skills"><b>Skills Used:</b> HMTL5, SASS/SCSS, REACT.JS, REDUX, JEST, ENZYME, API, NPM, CSS MODULES, GIT, SCRUM</p>
                     <Link to={{
-                        pathname: '/projects-about',
+                        pathname: '/details',
                         numberProp: 1
                     }}>
                         <div className="project-cover__image project-cover__image--first">
@@ -29,7 +29,7 @@ export default class Projects extends Component {
                     <p className="project__skills"><b>Skills Used:</b> HMTL5, SASS/SCSS, REACT.JS, WEBPACK, TDD JEST, ENZYME, MOBX, NPM, CSS MODULES, GIT, SCRUM</p>
 
                     <Link to={{
-                        pathname: '/projects-about',
+                        pathname: '/details',
                         numberProp: 2
                     }}>
                         <div className="project-cover__image project-cover__image--second">
@@ -45,7 +45,7 @@ export default class Projects extends Component {
                     <p className="project__skills"><b>Skills Used:</b> HTML5, SASS/SCSS, JAVASCRIPT (ES6), NPM, LARAVEL BLADE, GIT, SCRUM</p>
 
                     <Link to={{
-                        pathname: '/projects-about',
+                        pathname: '/details',
                         numberProp: 3
                     }}>
                         <div className="project-cover__image project-cover__image--third">
