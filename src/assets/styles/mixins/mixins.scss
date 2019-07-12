@@ -12,13 +12,13 @@
     }
 }
 
-@mixin Size($height: false, $width: false) {
+@mixin Size($height, $width) {
+    height: $height;
+    width: $width;
+}
 
-    @if $height != false {
-        height: $height;
-    }
-
-    @if $width != false {
-        width: $width;
-    }
+@mixin Center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
