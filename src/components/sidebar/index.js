@@ -16,8 +16,24 @@ export default class index extends Component {
             sidebarLogoDisplay: false,
             sidebarItemsDisplay: false,
             sidebarIconsDisplay: false,
-            timeout: 1000
+            screenWidth: false
         };
+    }
+
+    componentDidMount () {
+        let size = window.innerWidth;
+
+        if (size < 641) {
+            this.setState({
+                screenWidth: true
+            })
+        } else {
+            this.setState({
+                screenWidth: false
+            })
+        }
+
+        console.log(this.state.screenWidth);
     }
 
     Open = () => {
@@ -41,7 +57,7 @@ export default class index extends Component {
                     })
                 }
             });
-        }, this.state.timeout);
+        }, 1000);
     }
 
     HoverOpen = () => {
@@ -52,28 +68,31 @@ export default class index extends Component {
 
             var b = setTimeout(() => {
                 this.setState({
-                    sidebarTextDisplay: true,
+                    sidebarTextDisplay: true
                 }, () => {
                     clearTimeout(b);
                 });
-            }, this.state.timeout);
+            }, 1000);
         }
     }
 
     HoverClose = () => {
         if (this.state.sidebarStatus === "sidebar sidebar--expand") {
             this.setState({
-                sidebarStatus: "sidebar",
-                sidebarTextDisplay: false,
+                sidebarStatus: "sidebar"
             });
         }
 
-        // clearTimeout(b);
+        var c = setTimeout(() => {
+            this.setState({
+                sidebarTextDisplay: false
+            }, () => {
+                clearTimeout(c);
+            });
+        }, 1000);
     }
 
     Close = () => {
-        // clearTimeout(a);
-
         this.setState({
             sidebarStatus: "sidebar",
             sidebarTextDisplay: false,

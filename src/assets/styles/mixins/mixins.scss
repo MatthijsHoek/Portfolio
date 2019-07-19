@@ -22,3 +22,11 @@
     justify-content: center;
     align-items: center;
 }
+
+@mixin Mobile {
+    @media screen and (max-width: 640px) { @content };
+}
+
+@mixin Tablet {
+    @media screen and (max-width: 1095px) { @content };
+}

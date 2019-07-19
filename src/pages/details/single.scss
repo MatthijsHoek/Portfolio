@@ -13,6 +13,7 @@
         left: 0;
         top: -40px;
         z-index: -2;
+        height: 100%;
     }
 
     &__circle {
@@ -98,31 +99,6 @@
             text-decoration: underline;
         }
     }
-    
-
-    &-skills {
-        background-color: $strong-blue;
-        transform: skewX(-8deg);
-        margin: 8px 100px 0 10%;
-        padding: 25px;
-        width: 70%;
-        height: fit-content;
-
-        &__title {
-            @include Text ($raleway, 20px, bold, normal, $white);
-            margin: 0 0 20px 0;
-        }
-
-        &__text {
-            @include Text ($raleway, 20px, normal, 1.5, $white);
-            width: 300px;
-            margin: 0 0 0 15px;
-        }
-
-        &__title, &__text {
-            transform: skewX(8deg);
-        }
-    }
 
     &__image {
         @include Size (600px, 100%);
@@ -137,5 +113,24 @@
     &__arrow {
         @include Size (27px, 27px);
         margin: 0 0 70px auto;
+    }
+
+    &-empty {
+        @include Size (100%, 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &__text {
+            @include Text ($raleway, 50px, bold, normal, $dark);
+            margin: 0;
+        }
+
+        &__link {
+            @include Text ($raleway, 30px, bold, normal, $dark);
+            text-decoration: none;
+            margin-top: 30px;
+        }
     }
 }

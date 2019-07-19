@@ -1,0 +1,25 @@
+@import '../../assets/styles/app.scss';
+
+.parallel {
+    background-color: $strong-blue;
+    transform: skewX(-8deg);
+    margin: 8px 100px 0 10%;
+    padding: 25px;
+    width: 70%;
+    height: fit-content;
+
+    &__title {
+        @include Text ($raleway, 20px, bold, normal, $white);
+        margin: 0 0 20px 0;
+    }
+
+    &__text {
+        @include Text ($raleway, 20px, normal, 1.5, $white);
+        width: 300px;
+        margin: 0 0 0 15px;
+    }
+
+    &__title, &__text {
+        transform: skewX(8deg);
+    }
+}

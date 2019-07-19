@@ -1,7 +1,7 @@
 @import '../../assets/styles/app.scss';
 
 .home {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background: url('../../assets/images/backgrounds/bc-home.svg');
     background-repeat: no-repeat;
@@ -24,10 +24,12 @@
     
 
     &-title {
+        margin: 0 0 0 35%;
+
         &__text {
             @include Text ($raleway, 100px, 900, normal, $white);
             text-transform: uppercase;
-            margin: 0 0 0 35%;
+            margin: 0;
         }
 
         &__dot {
@@ -36,13 +38,80 @@
     }
 
     &-name, &-role {
+        margin: 10px 0 10px 35%;
+
         &__text {
             @include Text ($raleway, 50px, 900, normal, $white);
-            margin: 10px 0 10px 35%;
+            margin: 0;
         }
     }
 
     &-title, &-name, &-role {
         display: flex;
+    }
+}
+
+@include Tablet {
+    .home {
+        &-title {
+            margin: 10px 0 10px 25%;
+
+            &__text {
+                transition: 1s;
+                font-size: 88px;
+            }
+        }
+
+        &-name, &-role {
+            margin: 10px 0 10px 25%;
+
+            &__text {
+                transition: 1s;
+                font-size: 32px;
+            }
+        }
+    }
+}
+
+@include Mobile {
+    .home {
+        background: url('../../assets/images/backgrounds/m-bc-home.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+
+        &__lines {
+            background: url('../../assets/images/backgrounds/m-lines-home.svg');
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-size: 450px;
+        }
+
+        &-title {
+            margin: 10px 0 10px 4%;
+            width: 88%;
+
+            &__text {
+                transition: 1s;
+                font-size: 88px;
+            }
+        }
+
+        &-name, &-role {
+            margin: 10px 0 10px 5%;
+
+            &__text {
+                transition: 1s;
+                font-size: 32px;
+            }
+        }
+
+        &-name {
+            width: 52%;
+        }
+
+        &-role { 
+            width: 87%;
+        }
     }
 }

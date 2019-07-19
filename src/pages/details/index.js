@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import Parallel from '../../components/parallel';
 import './single.scss';
 import Close from '../../assets/icons/close.svg';
 import Chain from '../../assets/icons/link.svg';
@@ -41,12 +42,11 @@ export default class Details extends Component {
                                         <p className="single-link__text">View Website</p>
                                     </div>
                                 </div>
-                                <div className="single-skills">
-                                    <h3 className="single-skills__title">Skills Used</h3>
-                                    <p className="single-skills__text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    </p>
-                                </div>
+                                <Parallel 
+                                    parallelClass="parallel-details"
+                                    parallelTitle="Skills Used"
+                                    parallelText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                />
                             </div>
 
                             <img className="single__image" src={Placeholder} alt="" />
@@ -101,12 +101,11 @@ export default class Details extends Component {
                                         <p className="single-link__text">View Website</p>
                                     </div>
                                 </div>
-                                <div className="single-skills">
-                                    <h3 className="single-skills__title">Skills Used</h3>
-                                    <p className="single-skills__text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    </p>
-                                </div>
+                                <Parallel 
+                                    parallelClass="parallel-details"
+                                    parallelTitle="Skills Used"
+                                    parallelText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                />
                             </div>
 
                             <img className="single__image" src={Placeholder} alt="" />
@@ -160,12 +159,11 @@ export default class Details extends Component {
                                         <p className="single-link__text">View Website</p>
                                     </div>
                                 </div>
-                                <div className="single-skills">
-                                    <h3 className="single-skills__title">Skills Used</h3>
-                                    <p className="single-skills__text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    </p>
-                                </div>
+                                <Parallel 
+                                    parallelClass="parallel-details"
+                                    parallelTitle="Skills Used"
+                                    parallelText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                                />
                             </div>
 
                             <img className="single__image" src={Placeholder} alt="" />
@@ -201,7 +199,19 @@ export default class Details extends Component {
                     </>
                 )
             default:
-                break;
+                return (
+                    <>
+                        <p className="single__background">00</p>
+                        <section className="single">
+                            <div className="single-empty">
+                                <p className="single-empty__text">
+                                    No Project Found!
+                                </p>
+                                <Link className="single-empty__link" to="/projects">Back</Link>
+                            </div>
+                        </section>
+                    </>
+                )
         }
     }
 }
