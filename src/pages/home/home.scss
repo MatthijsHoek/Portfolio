@@ -24,7 +24,7 @@
     
 
     &-title {
-        margin: 0 0 0 35%;
+        margin: 0 0 0 30%;
 
         &__text {
             @include Text ($raleway, 100px, 900, normal, $white);
@@ -38,7 +38,7 @@
     }
 
     &-name, &-role {
-        margin: 10px 0 10px 35%;
+        margin: 10px 0 10px 30%;
 
         &__text {
             @include Text ($raleway, 50px, 900, normal, $white);

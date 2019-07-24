@@ -81,3 +81,11 @@
         }
     }
 }
+
+@include Mobile {
+    .project {
+        &-container {
+            flex-direction: column;
+        }
+    }
+}
