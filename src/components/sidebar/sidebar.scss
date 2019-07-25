@@ -68,6 +68,12 @@
 
             & > a {
                 text-decoration: none;
+
+                &:active {
+                    & > .sidebar-items__stripe {
+                        width: 92%;
+                    }
+                }
             }
         }
 
@@ -115,7 +121,6 @@
             background: black;
             margin: 24px 0 auto 0;
             position: absolute;
-            z-index: -10;
 
             &--blue {
                 background-color: $strong-blue;
@@ -232,7 +237,7 @@
         }
 
         & > .sidebar-items__text {
-            animation: colorChange 0.5s;
+            animation: textChange 0.5s;
             animation-delay: 1s;
             animation-fill-mode: forwards;
         }
@@ -266,6 +271,7 @@
             @include Size (100vh, 100%);
             background: url('../../assets/images/m-menu-bc.svg');
             background-repeat: no-repeat;
+            background-position: bottom;
             position: fixed;
             z-index: 99;
             background-size: cover;
@@ -338,9 +344,14 @@
     to {top: 0;}
 }
 
-@keyframes colorChange {
-    from {color: $dark}
-    to {color: white}
+@keyframes textChange {
+    from {
+        z-index: 0;
+    }
+    to {
+        color: white;
+        z-index: 10;
+    }
 }
 
 @keyframes textDisplay {
