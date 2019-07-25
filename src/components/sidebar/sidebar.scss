@@ -139,7 +139,7 @@
         @include Text ($raleway, 12px, bold, normal, $dark);
         transform: rotate(-90deg);
         margin: 0;
-        display: none;
+        visibility: hidden;
 
         &--display {
             display: block;
@@ -187,10 +187,6 @@
         &:hover {
             cursor: pointer;
         }
-
-        &--hide {
-            display: none;
-        }
     }
 
     &__button {
@@ -214,11 +210,33 @@
 
 .menu {
     display: flex;
+
+    &:hover {
+        & > .sidebar__text {
+            animation: textDisplay 0.1s;
+            -webkit-animation: textDisplay 0.1s;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+        }
+    }
+
+    &--hide {
+        display: none;
+    }
 }
 
-.item-hovered {
-    width: 100%;
-    transition: 1s;
+.item {
+    &:hover {
+        & > .sidebar-items__stripe {
+            width: 92%;
+        }
+
+        & > .sidebar-items__text {
+            animation: colorChange 0.5s;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+        }
+    }
 }
 
 @include Mobile {
@@ -318,4 +336,14 @@
 @keyframes display-menu-full {
     from {top: 100%;}
     to {top: 0;}
+}
+
+@keyframes colorChange {
+    from {color: $dark}
+    to {color: white}
+}
+
+@keyframes textDisplay {
+    from {visibility: hidden}
+    to {visibility: visible}
 }

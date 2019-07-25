@@ -20,7 +20,7 @@ export default class index extends Component {
             sidebarMenuDisplay: true,
             sidebarLogoDisplay: false,
             sidebarItemsDisplay: false,
-            sidebarIconsDisplay: false,
+            sidebarOpenDisplay: false,
             screenWidth: false
         };
     }
@@ -52,7 +52,7 @@ export default class index extends Component {
                 sidebarButtonDisplay: true,
                 sidebarLogoDisplay: true,
                 sidebarItemsDisplay: true,
-                sidebarIconsDisplay: true
+                sidebarOpenDisplay: true
             }, () => {
                 clearTimeout(a);
                 if (this.state.sidebarTextDisplay === true) {
@@ -65,19 +65,9 @@ export default class index extends Component {
     }
 
     HoverOpen = () => {
-        if (this.state.sidebarStatus === "sidebar") {
-            this.setState({
+        this.setState({
             sidebarStatus: "sidebar sidebar--expand",
         });
-
-            var b = setTimeout(() => {
-                this.setState({
-                    sidebarTextDisplay: true
-                }, () => {
-                    clearTimeout(b);
-                });
-            }, 1000);
-        }
     }
 
     HoverClose = () => {
@@ -86,52 +76,18 @@ export default class index extends Component {
                 sidebarStatus: "sidebar"
             });
         }
-
-        var c = setTimeout(() => {
-            this.setState({
-                sidebarTextDisplay: false
-            }, () => {
-                clearTimeout(c);
-            });
-        }, 1000);
     }
 
     Close = () => {
         this.setState({
             sidebarStatus: "sidebar",
             sidebarMobileStatus: false,
-            sidebarTextDisplay: false,
             sidebarButtonDisplay: false,
             sidebarMenuDisplay: true,
             sidebarLogoDisplay: false,
             sidebarItemsDisplay: false,
-            sidebarIconsDisplay: false,
+            sidebarOpenDisplay: false,
         });
-    }
-
-    ItemHoverOn = (e) => {
-        const element = document.querySelector('.sidebar-items');
-
-        if (element.classList.contains('sidebar-items--display')) {
-            const item = e.target;
-
-            item.children[0].classList.add('item-hovered');
-            
-            setTimeout(() => {
-                item.children[1].classList.add('sidebar-items__text--white');
-            }, 1000);
-        }
-    }
-
-    ItemHoverOff = (e) => {
-        const element = document.querySelector('.sidebar-items');
-
-        if (element.classList.contains('sidebar-items--display')) {
-            const item = e.target;
-
-            item.children[0].classList.remove('item-hovered');
-            item.children[1].classList.remove('sidebar-items__text--white');
-        }
     }
 
     render() {
@@ -168,7 +124,7 @@ export default class index extends Component {
                                 </div>
                             </div>
 
-                            <div className={this.state.sidebarIconsDisplay === true ? "sidebar-icons-display" : "sidebar-icons-display sidebar-icons-display--hide"}>
+                            <div className={this.state.sidebarOpenDisplay === true ? "sidebar-icons-display" : "sidebar-icons-display sidebar-icons-display--hide"}>
                                 <div className="sidebar-icons">
                                     <a href="https://github.com/MatthijsHoek"><img className="sidebar-icons__github" src={git} alt="" /></a>
                                     <a href="https://www.linkedin.com/in/matthijs-hoek-38981417b/"><img className="sidebar-icons__linkedin" src={linked} alt="" /></a>
@@ -182,32 +138,32 @@ export default class index extends Component {
                     <>
                         <div className={this.state.sidebarStatus}>
                             <div className="sidebar-top">
-                                <div className={this.state.sidebarIconsDisplay === false ? "sidebar-icons" : "sidebar-icons sidebar-icons--left"}>
+                                <div className={this.state.sidebarOpenDisplay === false ? "sidebar-icons" : "sidebar-icons sidebar-icons--left"}>
                                     <img className="sidebar__logo" src={logo} alt="" />
                                 </div> 
                             </div>
                             <div className="sidebar-mid">
-                                <div className="menu">
-                                    <div className={this.state.sidebarMenuDisplay === true ? "sidebar__menu" : "sidebar__menu sidebar__menu--hide"} onMouseEnter={this.HoverOpen} onMouseLeave={this.HoverClose} onClick={this.Open} />
-                                    <p className={this.state.sidebarTextDisplay === false ? "sidebar__text" : "sidebar__text sidebar__text--display"}>Menu</p>
+                                <div className={this.state.sidebarMenuDisplay === true ? "menu" : "menu--hide"} onMouseEnter={this.HoverOpen} onMouseLeave={this.HoverClose} onClick={this.Open} >
+                                    <span className="sidebar__menu" />
+                                    <p className="sidebar__text">Menu</p>
                                 </div>
     
                                 <div className={this.state.sidebarItemsDisplay === false ? "sidebar-items" : "sidebar-items sidebar-items--display"}>
                                     <div className="sidebar-items-container">
                                         <Link to="/">
-                                            <div className="sidebar-items-home item" onMouseEnter={this.ItemHoverOn} onMouseLeave={this.ItemHoverOff}> 
+                                            <div className="sidebar-items-home item"> 
                                                 <span className="sidebar-items__stripe sidebar-items__stripe--blue" />
                                                 <p className="sidebar-items__text">Home</p>
                                             </div>
                                         </Link>
                                         <Link to="/projects">
-                                            <div className="sidebar-items-project item" onMouseEnter={this.ItemHoverOn} onMouseLeave={this.ItemHoverOff}>
+                                            <div className="sidebar-items-project item">
                                                 <span className="sidebar-items__stripe sidebar-items__stripe--purple" />
                                                 <p className="sidebar-items__text">Projects</p>
                                             </div>
                                         </Link>
                                         <Link to="/about">
-                                            <div className="sidebar-items-about item" onMouseEnter={this.ItemHoverOn} onMouseLeave={this.ItemHoverOff}>
+                                            <div className="sidebar-items-about item">
                                                 <span className="sidebar-items__stripe sidebar-items__stripe--dark" />
                                                 <p className="sidebar-items__text">About</p>
                                             </div>
@@ -218,7 +174,7 @@ export default class index extends Component {
                                 <div className={this.state.sidebarButtonDisplay === false ? "sidebar__button" : "sidebar__button sidebar__button--display"} onClick={this.Close} />
                             </div>
                             <div className="sidebar-bot">
-                                <div className={this.state.sidebarIconsDisplay === false ? "sidebar-icons sidebar-icons--regular" : "sidebar-icons sidebar-icons--left"}>
+                                <div className={this.state.sidebarOpenDisplay === false ? "sidebar-icons sidebar-icons--regular" : "sidebar-icons sidebar-icons--left"}>
                                     <a href="https://github.com/MatthijsHoek"><img className="sidebar-icons__github" src={git} alt="" /></a>
                                     <a href="https://www.linkedin.com/in/matthijs-hoek-38981417b/"><img className="sidebar-icons__linkedin" src={linked} alt="" /></a>
                                 </div>
