@@ -67,9 +67,9 @@
             z-index: 5;
             position: absolute;
             left: 0;
-            bottom: -35px;
+            bottom: -40px;
             overflow: hidden;
-            @include Size (82%, 100%);
+            @include Size (88%, 100%);
             transform: skewY(11deg);
 
             &--first, &--second, &--third, &--fourth {
@@ -82,10 +82,36 @@
     }
 }
 
-@include Mobile {
+@include Tablet {
     .project {
+        display: flex;
+        padding: 0;
+        height: 25%;
+
+        &--column {
+            display: flex;
+            flex-direction: column;
+            padding-left: 30px;
+        }
+
         &-container {
             flex-direction: column;
+            height: 100vh;
+        }
+
+        &__image {
+            width: 37%;
+            object-fit: cover;
+        }
+
+        &__number {
+            margin: 20px 0;
+            font-size: 42px;
+        }
+
+        &__title {
+            font-size: 24px;
+            margin: 0 0 20px 0;
         }
     }
 }

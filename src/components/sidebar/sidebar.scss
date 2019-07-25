@@ -5,7 +5,8 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    width: 85px;
+    width: 82px;
+    min-width: 82px;
     transition: 1s;
     position: sticky;
     top: 0;
@@ -21,11 +22,13 @@
     }
 
     &--expand {
-        width: 100px;
+        width: 90px;
+        min-width: 90px;
     }
 
     &--full {
-        width: 500px;
+        width: 330px;
+        min-width: 330px;
     }
 
     ////////////////////////////// Containers

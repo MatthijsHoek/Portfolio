@@ -37,8 +37,6 @@ export default class index extends Component {
                 screenWidth: false
             })
         }
-
-        console.log(size, this.state.screenWidth);
     }
 
     Open = () => {
@@ -112,21 +110,28 @@ export default class index extends Component {
     }
 
     ItemHoverOn = (e) => {
-        const item = e.target;
+        const element = document.querySelector('.sidebar-items');
 
-        item.children[0].classList.add('item-hovered');
-        
-        setTimeout(() => {
-            item.children[1].classList.add('sidebar-items__text--white');
-        }, 1000);
+        if (element.classList.contains('sidebar-items--display')) {
+            const item = e.target;
+
+            item.children[0].classList.add('item-hovered');
+            
+            setTimeout(() => {
+                item.children[1].classList.add('sidebar-items__text--white');
+            }, 1000);
+        }
     }
 
     ItemHoverOff = (e) => {
-        const item = e.target;
+        const element = document.querySelector('.sidebar-items');
 
-        item.children[0].classList.remove('item-hovered');
-        item.children[1].classList.remove('sidebar-items__text--white');
-        // clearTimeout(c);
+        if (element.classList.contains('sidebar-items--display')) {
+            const item = e.target;
+
+            item.children[0].classList.remove('item-hovered');
+            item.children[1].classList.remove('sidebar-items__text--white');
+        }
     }
 
     render() {
@@ -188,7 +193,7 @@ export default class index extends Component {
                                 </div>
     
                                 <div className={this.state.sidebarItemsDisplay === false ? "sidebar-items" : "sidebar-items sidebar-items--display"}>
-                                    <div className={"sidebar-items-container"}>
+                                    <div className="sidebar-items-container">
                                         <Link to="/">
                                             <div className="sidebar-items-home item" onMouseEnter={this.ItemHoverOn} onMouseLeave={this.ItemHoverOff}> 
                                                 <span className="sidebar-items__stripe sidebar-items__stripe--blue" />

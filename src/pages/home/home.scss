@@ -93,12 +93,16 @@
 
             &__text {
                 transition: 1s;
-                font-size: 88px;
+                font-size: 82px;
             }
         }
 
         &-name, &-role {
             margin: 10px 0 10px 5%;
+        }
+
+        &-name {
+            width: 59%;
 
             &__text {
                 transition: 1s;
@@ -106,12 +110,13 @@
             }
         }
 
-        &-name {
-            width: 52%;
-        }
-
         &-role { 
-            width: 87%;
+            width: 91%;
+
+            &__text {
+                transition: 1s;
+                font-size: 30px;
+            }
         }
     }
 }

@@ -5,9 +5,9 @@ export default class Parallel extends Component {
     render () {
         return (
             <>
-                <div class={`parallel ${this.props.parallelClass}`}>
-                    <p class="parallel__title">{this.props.parallelTitle}</p>
-                    <p class="parallel__text">{this.props.parallelText}</p>
+                <div className={`parallel ${this.props.parallelClass}`}>
+                    <p className="parallel__title">{this.props.parallelTitle}</p>
+                    <p className="parallel__text">{this.props.parallelText}</p>
                 </div>
             </>
         )
