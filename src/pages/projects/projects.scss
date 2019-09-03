@@ -6,6 +6,22 @@
     padding: 0 35px;
     overflow: hidden;
 
+    &--first {
+        animation: 0.5s ease-out 0s 1 slide-to-right-first;
+    }
+
+    &--second {
+        animation: 0.5s ease-out 0s 1 slide-to-right-second;
+    }
+
+    &--third {
+        animation: 0.5s ease-out 0s 1 slide-to-right-third;
+    }
+
+    &--fourth {
+        animation: 0.5s ease-out 0s 1 slide-to-right-fourth;
+    }
+
     &:hover {
         .project-cover, .project-cover-color {
             display: block;
@@ -48,7 +64,7 @@
         overflow: hidden;
         transform: skewY(11deg);
         cursor: url('../../assets/icons/cursor.png');
-        animation: display-cover 0.5s;
+        animation: 0.5s ease-out 0s 1 display-cover;
 
         &-color {
             display: none;
@@ -68,7 +84,7 @@
             }
             
             &--third {
-                background-color: rgba(59, 54, 82, 0.8)
+                background-color: rgba(59, 54, 82, 0.8);
             }
             
             &--fourth {
@@ -128,4 +144,48 @@
 @keyframes display-cover {
     from {top: 100%;}
     to {top: 170px;}
+}
+
+@keyframes slide-to-right-first {
+    0% {
+        display: none;
+        transform: translateX(-357px);
+    }
+    100% {
+        display: block;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-to-right-second {
+    0% {
+        display: none;
+        transform: translateX(-713px);
+    }
+    100% {
+        display: block;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-to-right-third {
+    0% {
+        display: none;
+        transform: translateX(-1070px);
+    }
+    100% {
+        display: block;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-to-right-fourth {
+    0% {
+        display: none;
+        transform: translateX(-1427px);
+    }
+    100% {
+        display: block;
+        transform: translateX(0);
+    }
 }

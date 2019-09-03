@@ -43,7 +43,7 @@ export default class Projects extends Component {
                             </Link>
                         </div>
 
-                        <div className="project">
+                        <div className="project project--second">
                             <p className="project__number">02</p>
                             <img src={IMG} className="project__image" alt="" />
                             <p className="project__title">WorkPamoja</p>
@@ -57,7 +57,7 @@ export default class Projects extends Component {
                             </Link>
                         </div>
 
-                        <div className="project">
+                        <div className="project project--third">
                             <p className="project__number">03</p>
                             <img src={IMG} className="project__image" alt="" />
                             <p className="project__title">Rubrics</p>
@@ -71,7 +71,7 @@ export default class Projects extends Component {
                             </Link>
                         </div>
 
-                        <div className="project">
+                        <div className="project project--fourth">
                             <p className="project__number">04</p>
                             <img src={IMG} className="project__image" alt="" />
                             <p className="project__title">Coming in the future</p>
