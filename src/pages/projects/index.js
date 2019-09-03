@@ -35,12 +35,10 @@ export default class Projects extends Component {
                             <img src={IMG} className="project__image" alt="" />
                             <p className="project__title">Old Dance School Admin</p>
                             <p className="project__skills"><b>Skills Used:</b> HMTL5, SASS/SCSS, REACT.JS, REDUX, JEST, ENZYME, API, NPM, CSS MODULES, GIT, SCRUM</p>
-                            <Link to={{
-                                pathname: '/details',
-                                numberProp: 1
-                            }}>
-                                <div className="project-cover__image project-cover__image--first">
-                                    <div className="project-cover project-cover--first" />
+                            <Link to="/ODSA">
+                                <div className="project-cover">
+                                    <img src={IMG} className="project-cover__image" alt="" />
+                                    <div className="project-cover-color project-cover-color--first" />
                                 </div>
                             </Link>
                         </div>
@@ -51,12 +49,10 @@ export default class Projects extends Component {
                             <p className="project__title">WorkPamoja</p>
                             <p className="project__skills"><b>Skills Used:</b> HMTL5, SASS/SCSS, REACT.JS, WEBPACK, TDD JEST, ENZYME, MOBX, NPM, CSS MODULES, GIT, SCRUM</p>
 
-                            <Link to={{
-                                pathname: '/details',
-                                numberProp: 2
-                            }}>
-                                <div className="project-cover__image project-cover__image--second">
-                                    <div className="project-cover project-cover--second" />
+                            <Link to="/workpamoja">
+                                <div className="project-cover">
+                                    <img src={IMG} className="project-cover__image" alt="" />
+                                    <div className="project-cover-color project-cover-color--second" />
                                 </div>
                             </Link>
                         </div>
@@ -67,12 +63,10 @@ export default class Projects extends Component {
                             <p className="project__title">Rubrics</p>
                             <p className="project__skills"><b>Skills Used:</b> HTML5, SASS/SCSS, JAVASCRIPT (ES6), NPM, LARAVEL BLADE, GIT, SCRUM</p>
 
-                            <Link to={{
-                                pathname: '/details',
-                                numberProp: 3
-                            }}>
-                                <div className="project-cover__image project-cover__image--third">
-                                    <div className="project-cover project-cover--third" />
+                            <Link to="rubrics">
+                                <div className="project-cover">
+                                    <img src={IMG} className="project-cover__image" alt="" />
+                                    <div className="project-cover-color project-cover-color--third" />
                                 </div>
                             </Link>
                         </div>
@@ -83,62 +77,43 @@ export default class Projects extends Component {
                             <p className="project__title">Coming in the future</p>
                             <p className="project__skills"><b>Skills Used:</b> -</p>
 
-                            <div className="project-cover__image project-cover__image--fourth">
-                                <div className="project-cover project-cover--fourth" />
+                            <div className="project-cover">
+                                <img src={IMG} className="project-cover__image" alt="" />
+                                <div className="project-cover-color project-cover-color--fourth" />
                             </div>
                         </div>
                     </>
                 ) : (
                     <>
-                        <div className="project project--first">
-                            <img src={IMG} className="project__image" alt="" />
-                            <div className="project--column">
-                                <p className="project__number">01</p>
-                                <p className="project__title">Old Dance School Admin</p>
-                                <Link to={{
-                                    pathname: '/details',
-                                    numberProp: 1
-                                }}>
-                                    <div className="project-cover__image project-cover__image--first">
-                                        <div className="project-cover project-cover--first" />
-                                    </div>
-                                </Link>
+                        <Link className="project__link" to="/ODSA">
+                            <div className="project project--first">
+                                <img src={IMG} className="project__image" alt="" />
+                                <div className="project--column">
+                                    <p className="project__number">01</p>
+                                    <p className="project__title">Old Dance School Admin</p>
+                                </div>
                             </div>
-                        </div>
+                        </Link>
 
-                        <div className="project">
-                            <img src={IMG} className="project__image" alt="" />
-                            <div className="project--column">
-                                <p className="project__number">02</p>
-                                <p className="project__title">WorkPamoja</p>
-
-                                <Link to={{
-                                    pathname: '/details',
-                                    numberProp: 2
-                                }}>
-                                    <div className="project-cover__image project-cover__image--second">
-                                        <div className="project-cover project-cover--second" />
-                                    </div>
-                                </Link>
+                        <Link className="project__link" to="/workpamoja">
+                            <div className="project">
+                                <img src={IMG} className="project__image" alt="" />
+                                <div className="project--column">
+                                    <p className="project__number">02</p>
+                                    <p className="project__title">WorkPamoja</p>
+                                </div>
                             </div>
-                        </div>
+                        </Link>
 
-                        <div className="project">
-                            <img src={IMG} className="project__image" alt="" />
-                            <div className="project--column">
-                                <p className="project__number">03</p>
-                                <p className="project__title">Rubrics</p>
-
-                                <Link to={{
-                                    pathname: '/details',
-                                    numberProp: 3
-                                }}>
-                                    <div className="project-cover__image project-cover__image--third">
-                                        <div className="project-cover project-cover--third" />
-                                    </div>
-                                </Link>
+                        <Link className="project__link" to="/rubrics">
+                            <div className="project">
+                                <img src={IMG} className="project__image" alt="" />
+                                <div className="project--column">
+                                    <p className="project__number">03</p>
+                                    <p className="project__title">Rubrics</p>
+                                </div>
                             </div>
-                        </div>
+                        </Link>
 
                         <div className="project">
                             <img src={IMG} className="project__image" alt="" />

@@ -7,7 +7,7 @@
     overflow: hidden;
 
     &:hover {
-        .project-cover__image {
+        .project-cover, .project-cover-color {
             display: block;
         }
     }
@@ -26,12 +26,12 @@
     }
 
     &__title {
-        @include Text ($raleway, 22px, 900, 1.45, normal, $dark);
+        @include Text ($raleway, 22px, 900, 1.45, $dark);
         margin: 50px 0 40px 0;
     }
 
     &__skills {
-        @include Text ($raleway, 16px, normal, 1.88, normal, $dark);
+        @include Text ($raleway, 16px, normal, 1.88, $dark);
     }
 
     &__title, &__skills {
@@ -39,45 +39,49 @@
     }
 
     &-cover {
+        display: none;
         z-index: 10;
         position: absolute;
-        top: 0;
+        top: 170px;
+        left: 0;
         @include Size (100%, 100%);
         overflow: hidden;
-        cursor: url(../../assets/icons/cursor.png), auto;
+        transform: skewY(11deg);
+        cursor: url('../../assets/icons/cursor.png');
+        animation: display-cover 0.5s;
 
-        &--first {
-            background-color: rgba(50, 1, 255, 0.8);
-        } 
-        
-        &--second {
-            background-color: rgba(132, 36, 255, 0.8);
-        }
-        
-        &--third {
-            background-color: rgba(59, 54, 82, 0.8)
-        }
-        
-        &--fourth {
-            background-color: rgba(87, 45, 255, 0.8);
+        &-color {
+            display: none;
+            z-index: 15;
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include Size (100%, 100%);
+            overflow: hidden;
+
+            &--first {
+                background-color: rgba(50, 1, 255, 0.8);
+            } 
+            
+            &--second {
+                background-color: rgba(132, 36, 255, 0.8);
+            }
+            
+            &--third {
+                background-color: rgba(59, 54, 82, 0.8)
+            }
+            
+            &--fourth {
+                background-color: rgba(87, 45, 255, 0.8);
+            }
         }
 
         &__image {
-            display: none;
             z-index: 5;
-            position: absolute;
-            left: 0;
-            bottom: -40px;
-            overflow: hidden;
-            @include Size (88%, 100%);
-            transform: skewY(11deg);
-
-            &--first, &--second, &--third, &--fourth {
-                background: url('../../assets/images/placeholder.png') no-repeat;
-                background-position: center;
-                background-size: 1440px;
-
-            }
+            @include Size (100%, 100%);
+            transform: skewY(-11deg);
+            object-fit: cover;
+            margin-top: -35px;
         }
     }
 }
@@ -86,7 +90,8 @@
     .project {
         display: flex;
         padding: 0;
-        height: 25%;
+        height: calc(100vh - 75vh);
+        text-decoration: none;
 
         &--column {
             display: flex;
@@ -113,5 +118,14 @@
             font-size: 24px;
             margin: 0 0 20px 0;
         }
+
+        &__link {
+            text-decoration: none;
+        }
     }
+}
+
+@keyframes display-cover {
+    from {top: 100%;}
+    to {top: 170px;}
 }
