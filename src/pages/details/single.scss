@@ -5,6 +5,11 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    transition: 1s;
+
+    &--thin {
+        padding: 60px;        
+    }
 
     &__background {
         @include Text ($raleway, 800px, bold, normal, $light-grey);
@@ -66,8 +71,7 @@
         &__text {
             @include Text ($raleway, 20px, 1.6, normal, $dark, justify);
             font-style: italic;
-            margin: 50px 0 0 0;
-            width: 90%;
+            margin: 28px 100px 0 0;
 
             &--none {
                 margin: 0 0 0 auto;
@@ -103,6 +107,7 @@
     &__image {
         @include Size (600px, 100%);
         margin-top: 70px;
+        object-fit: cover;
 
         &--small {
             @include Size (400px, 460px);

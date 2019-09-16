@@ -59,7 +59,7 @@ export default class Odsa extends Component {
                                     </div>
                                 </div>
                                 <Parallel 
-                                    parallelClass="parallel-details"
+                                    parallelClass="parallel-single"
                                     parallelTitle="Skills Used"
                                     parallelText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                                 />
@@ -113,7 +113,7 @@ export default class Odsa extends Component {
                             </div>
                             <img className="single__image" src={Placeholder} alt="" />
                             <Parallel 
-                                    parallelClass="parallel-details"
+                                    parallelClass="parallel-single"
                                     parallelTitle="Skills Used"
                                     parallelText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                                 />

@@ -1,12 +1,10 @@
 @import '../../assets/styles/app.scss';
 
 .parallel {
-    background-color: $strong-blue;
     transform: skewX(-8deg);
-    margin: 8px 100px 0 10%;
     padding: 25px;
-    width: 70%;
     height: fit-content;
+    width: fit-content;
 
     &__title {
         @include Text ($raleway, 20px, bold, normal, $white);
@@ -24,13 +22,33 @@
     }
 }
 
-@include Mobile {
-    .parallel {
-        margin: 50px 0 30px 20px;
-        width: 77%;
+.parallel-about {
+    background-color: $purpleish;
+    margin-left: auto;
+}
 
-        &__text {
+.parallel-single {
+    background-color: $strong-blue;
+    margin: 8px auto 0 auto;
+    width: 70%;
+}
+
+@include Mobile {
+    .parallel-single {
+        margin: 50px 0 30px 20px;
+        width: 73%;
+
+        .parallel__text {
             margin: 0;
+        }
+    }
+
+    .parallel-about {
+        margin: 0 0 0 20px;
+        width: 72%;
+
+        .parallel__text {
+            width: auto;
         }
     }
 }

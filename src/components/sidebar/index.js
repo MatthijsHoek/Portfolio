@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './sidebar.scss';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../../assets/icons/logo.svg';
 import git from '../../assets/icons/github-alt.svg';
 import linked from '../../assets/icons/linkedin.svg';
@@ -97,30 +97,30 @@ export default class index extends Component {
                     <>
                         <img className={this.state.sidebarMobileStatus === false ? "sidebar-mobile-col" : "sidebar-mobile-col sidebar-mobile-col--hide"} src={menu} alt="" />
                         <img className={this.state.sidebarMenuDisplay === true ? "sidebar__menu" : "sidebar__menu sidebar__menu--hide"} src={menuIcon} onClick={this.Open} alt="" />
-                        <div className={this.state.sidebarMobileStatus === true ? "sidebar-mobile" : "sidebar-mobile sidebar-mobile--hide"}>
+                            <div className={this.state.sidebarMobileStatus === true ? "sidebar-mobile" : "sidebar-mobile sidebar-mobile--hide"}>
                             <img className={this.state.sidebarMobileStatus === true ? "sidebar__button sidebar__button--display" : "sidebar__button"} src={close} onClick={this.Close} alt="" />
                             <img className={this.state.sidebarLogoDisplay === true ? "sidebar__logo" : "sidebar__logo sidebar__logo--hide"} src={logo} alt="" />
 
                             <div className={this.state.sidebarItemsDisplay === false ? "sidebar-items" : "sidebar-items sidebar-items--display"}>
                                 <div className={"sidebar-items-container"}>
-                                    <Link to="/">
+                                    <NavLink exact to="/" activeClassName="item-active">
                                         <div className="sidebar-items-home item"> 
                                             <span className="sidebar-items__stripe sidebar-items__stripe--blue" />
                                             <p className="sidebar-items__text">Home</p>
                                         </div>
-                                    </Link>
-                                    <Link to="/projects">
+                                    </NavLink>
+                                    <NavLink to="/projects" activeClassName="item-active">
                                         <div className="sidebar-items-project item">
                                             <span className="sidebar-items__stripe sidebar-items__stripe--purple" />
                                             <p className="sidebar-items__text">Projects</p>
                                         </div>
-                                    </Link>
-                                    <Link to="/about">
+                                    </NavLink>
+                                    <NavLink to="/about" activeClassName="item-active">
                                         <div className="sidebar-items-about item">
                                             <span className="sidebar-items__stripe sidebar-items__stripe--dark" />
                                             <p className="sidebar-items__text">About</p>
                                         </div>
-                                    </Link>
+                                    </NavLink>
                                 </div>
                             </div>
 
@@ -150,24 +150,24 @@ export default class index extends Component {
     
                                 <div className={this.state.sidebarItemsDisplay === false ? "sidebar-items" : "sidebar-items sidebar-items--display"}>
                                     <div className="sidebar-items-container">
-                                        <Link to="/">
+                                        <NavLink exact to="/" activeClassName="item-active">
                                             <div className="sidebar-items-home item"> 
                                                 <span className="sidebar-items__stripe sidebar-items__stripe--blue" />
                                                 <p className="sidebar-items__text">Home</p>
                                             </div>
-                                        </Link>
-                                        <Link to="/projects">
+                                        </NavLink>
+                                        <NavLink to="/projects" activeClassName="item-active">
                                             <div className="sidebar-items-project item">
                                                 <span className="sidebar-items__stripe sidebar-items__stripe--purple" />
                                                 <p className="sidebar-items__text">Projects</p>
                                             </div>
-                                        </Link>
-                                        <Link to="/about">
+                                        </NavLink>
+                                        <NavLink to="/about" activeClassName="item-active">
                                             <div className="sidebar-items-about item">
                                                 <span className="sidebar-items__stripe sidebar-items__stripe--dark" />
                                                 <p className="sidebar-items__text">About</p>
                                             </div>
-                                        </Link>
+                                        </NavLink>
                                     </div>
                                 </div>
     

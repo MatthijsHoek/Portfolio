@@ -116,7 +116,7 @@
 
         &__stripe {
             width: 15px;
-            height: 34px;
+            height: 33px;
             transform: skew(-10deg);
             transition: 1s;
             background: black;
@@ -242,6 +242,17 @@
             animation-delay: 1s;
             animation-fill-mode: forwards;
         }
+    }
+}
+
+.item-active {
+    .sidebar-items__stripe {
+        width: 92%;
+    }
+
+    .sidebar-items__text {
+        color: white;
+        z-index: 10;
     }
 }
 

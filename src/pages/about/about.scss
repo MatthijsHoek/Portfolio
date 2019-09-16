@@ -1,7 +1,7 @@
 @import '../../assets/styles/app.scss';
 
-.home {
-    height: 100vh;
+.about {
+    height: 100%;
     width: 100%;
     background: url('../../assets/images/backgrounds/bc-home.svg');
     background-repeat: no-repeat;
@@ -13,11 +13,128 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        background: url('../../assets/images/backgrounds/lines-home.svg');
+        background: url('../../assets/images/backgrounds/lines-about.svg');
         background-repeat: no-repeat;
-        background-position: bottom right;
+        background-position: top left;
         background-size: 1840px;
-        background-position-y: 439px;
+        background-position-y: -73px;
+    }
+
+    &-container {
+        padding: 0 180px;
+    }
+
+    &-info {
+        display: flex;
+        margin-top: 13%;
+
+        &--small {
+            margin-top: 7%;
+        }
+
+        &__text {
+            @include Text ($raleway, 22px, normal, normal, $white);
+            width: 45%;
+        }
+
+        &__image {
+            @include Size (300px, auto);
+            object-fit: cover;
+            margin-left: auto;
+        }
+    }
+
+    &-name {
+        margin-right: 40px;
+
+        &__text {
+            @include Text ($raleway, 90px, 900, 1, $white);
+            margin: 0;
+
+            &--last {
+                @include Text ($raleway, 90px, 900, 1, $black);
+                background: white;
+                width: 70%;
+            }
+        }
+    }
+}
+
+@include Tablet {
+    .about {
+        &-container {
+            padding: 0 40px;
+            overflow-y: auto;
+        }
+
+        &-info {
+            margin: 6% 0 30px 0;
+            flex-direction: column;
+
+            &__text {
+                width: auto;
+            }
+
+            &__image {
+                @include Size (244px, auto);
+            }
+        }
+
+        &-name {
+            &__text {
+                @include Text ($raleway, 80px, 900, 1, $white);
+
+                &--last {
+                    @include Text ($raleway, 80px, 900, 1, $black);
+                    margin-bottom: 30px;
+                    width: 202px;
+                }
+            }
+        }
+    }
+}
+
+@include Mobile {
+
+    .about {
+        background: url('../../assets/images/backgrounds/m-bc-home.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+
+        &__lines {
+            background: url('../../assets/images/backgrounds/m-lines-home.svg');
+            background-repeat: no-repeat;
+            background-size: 450px;
+        }
+        &-container {
+            padding: 0 20px;
+            overflow-y: auto;
+        }
+
+        &-info {
+            flex-direction: column;
+
+            &__text {
+                width: auto;
+            }
+
+            &__image {
+                @include Size (248px, auto);
+                object-fit: cover;
+                margin-left: 0;
+            }
+        }
+
+        &-name {
+            &__text {
+                @include Text ($raleway, 80px, 900, 1, $white);
+
+                &--last {
+                    @include Text ($raleway, 80px, 900, 1, $black);
+                    margin-bottom: 30px;
+                }
+            }
+        }
     }
 }
